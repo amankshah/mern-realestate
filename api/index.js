@@ -6,8 +6,9 @@ import mongoose from 'mongoose';
 import userRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js';
 
-let  MongoUrl = "mongodb+srv://Aman:Aman@real-estate.uh7pqry.mongodb.net/real-estate?retryWrites=true&w=majority";
 
+let  MongoUrl = "mongodb+srv://Aman:Aman@real-estate.uh7pqry.mongodb.net/real-estate?retryWrites=true&w=majority";
+let port =3001
 dotenv.config();
 console.log("env value :" ,process.env.MONGO);
 
@@ -21,8 +22,8 @@ mongoose.connect(MongoUrl).then(()=>{
 const app = express();
 app.use(express.json());
 
-app.listen(3001, () => {
-    console.log('Server is running on port 3000');
+app.listen(port, () => {
+    console.log('Server is running on port',port);
     
 });
 
