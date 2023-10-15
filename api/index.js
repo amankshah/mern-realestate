@@ -2,6 +2,7 @@ import  dotenv  from 'dotenv';
 
 import  express  from 'express';
 import mongoose from 'mongoose';
+import userRouter from './routes/user.route.js';
 
 let  MongoUrl = "mongodb+srv://Aman:Aman@real-estate.uh7pqry.mongodb.net/real-estate?retryWrites=true&w=majority";
 
@@ -21,3 +22,5 @@ app.listen(3000, () => {
     console.log('Server is running on port 3000');
     
 });
+
+app.use('/api/user',userRouter)
