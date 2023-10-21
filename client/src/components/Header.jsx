@@ -42,7 +42,6 @@ export default function Header() {
                 className="rounded-full h-7 w-7 object-cover"
                 src={currentUser.avatar}
                 alt="Profile Image"
-                srcset=""
               />
             </Link>
           ) : (
