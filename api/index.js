@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 
 import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
+import cookieParser from "cookie-parser";
 
 let MongoUrl = process.env.MONGO_URL;
 let port = 3001;
@@ -23,6 +24,8 @@ mongoose
   });
 const app = express();
 app.use(express.json());
+
+app.use(cookieParser());
 
 app.listen(port, () => {
   console.log("Server is running on port", port);
