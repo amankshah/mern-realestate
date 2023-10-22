@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 
 import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
+import listingRouter from "./routes/listing.route.js";
 import cookieParser from "cookie-parser";
 
 let MongoUrl = process.env.MONGO_URL;
@@ -33,6 +34,7 @@ app.listen(port, () => {
 
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/listing", listingRouter);
 
 //Middleware
 
